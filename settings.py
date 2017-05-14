@@ -18,11 +18,11 @@ ENVIRONMENTS = {
 CSV_DATA_DIR = os.environ.get('QSFOREX_CSV_DATA_DIR', None)
 OUTPUT_RESULTS_DIR = os.environ.get('QSFOREX_OUTPUT_RESULTS_DIR', None)
 
-DOMAIN = "practice"
+DOMAIN = os.environ.get('DOMAIN', None)
 STREAM_DOMAIN = ENVIRONMENTS["streaming"][DOMAIN]
 API_DOMAIN = ENVIRONMENTS["api"][DOMAIN]
 ACCESS_TOKEN = os.environ.get('OANDA_API_ACCESS_TOKEN', None)
 ACCOUNT_ID = os.environ.get('OANDA_API_ACCOUNT_ID', None)
 
-BASE_CURRENCY = "USD"
-EQUITY = Decimal("100000.00")
+BASE_CURRENCY = os.environ.get('BASE_CURRENCY', None)
+EQUITY = Decimal(os.environ.get('EQUITY', None))
