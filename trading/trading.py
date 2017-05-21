@@ -52,12 +52,12 @@ if __name__ == "__main__":
     # Set the number of decimal places to 2
     getcontext().prec = 2
 
-    heartbeat = 0.0  # Time in seconds between polling
+    heartbeat = 0.5  # Time in seconds between polling
     events = queue.Queue()
     equity = settings.EQUITY
 
     # Pairs to include in streaming data set
-    pairs = ["EURUSD", "GBPUSD"]
+    pairs = ["EURUSD"]
 
     # Create the OANDA market price streaming class
     # making sure to provide authentication commands

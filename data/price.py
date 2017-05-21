@@ -109,8 +109,10 @@ class HistoricCSVPriceHandler(PriceHandler):
 
     def _list_all_csv_files(self):
         files = os.listdir(settings.CSV_DATA_DIR)
+        print(files)
         pattern = re.compile("[A-Z]{6}_\d{8}.csv")
         matching_files = [f for f in files if pattern.search(f)]
+        print(matching_files)
         matching_files.sort()
         return matching_files
 

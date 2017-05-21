@@ -29,6 +29,6 @@ pip-log.txt
 .mr.developer.cfg
 
 # configs
-env.sh
+practice_env.sh
 
 .idea*

@@ -15,7 +15,7 @@ from qsforex.settings import OUTPUT_RESULTS_DIR
 
 class Portfolio(object):
     def __init__(
-        self, ticker, events, home_currency="GBP", 
+        self, ticker, events, home_currency="USD",
         leverage=20, equity=Decimal("100000.00"), 
         risk_per_trade=Decimal("0.02"), backtest=True
     ):
@@ -161,7 +161,7 @@ class Portfolio(object):
                 ps = self.positions[currency_pair]
 
                 if side == "buy" and ps.position_type == "long":
-                    add_position_units(currency_pair, units)
+                    self.add_position_units(currency_pair, units)
 
                 elif side == "sell" and ps.position_type == "long":
                     if units == ps.units:
@@ -182,7 +182,7 @@ class Portfolio(object):
                         return
                         
                 elif side == "sell" and ps.position_type == "short":
-                    add_position_units(currency_pair, units)
+                    self.add_position_units(currency_pair, units)
 
             order = OrderEvent(currency_pair, units, "market", side)
             self.events.put(order)
